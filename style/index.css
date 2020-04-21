@@ -29,6 +29,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
+
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -37,6 +38,7 @@ nav {
     margin-top: 4%;
     
 }
+
 nav a {
     text-decoration: none;
     color: black;
@@ -87,6 +89,7 @@ table {
 
 * {
     box-sizing: border-box;
+    border: 1px solid black;
 }
 
 html, body {
@@ -109,14 +112,34 @@ p {
     margin: 0 auto;
 }
 
+
+@media (max-width: 800px) {
+    .container {
+        width: 100%;
+    }
+}
+
 @media (max-width: 500px) {
     .container {
         width: 100%;
     }
 }
 
-@media (max-width: 800px) {
-    .container {
+.top-content {
+    display: flex;   
+    margin-bottom: 2%;
+    border-bottom: 1px dashed black;
+    flex-direction: row;
+}
+
+.top-content .text-container {
+    width: 90%;
+    padding: 0 1%;
+    padding-bottom: 2%;  
+}
+
+@media (min-width: 800px) {
+    .top-content .text-container {
         width: 100%;
     }
 }
@@ -127,35 +150,17 @@ p {
     }
     .top-content {
         flex-direction: column;
+        align-items: center;
+        padding: 0;
     }
-    .top-content .text-container {
-        width: 48%;
+    .text-container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 0;
+        margin: 0;
     }
 }
 
-.top-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-bottom: 2%;
-    border-bottom: 1px dashed black;
-    flex-direction: row;
-}
-
-.top-content .text-container {
-    width: 48%;
-    padding: 0 1%;
-    padding-bottom: 2%;  
-}
-
-@media (min-width: 800px) {
-    .top-content {
-        flex-direction: row;
-    }
-    .top-content .text-container {
-        width: 48%;
-    }
-}
 .middle-content {
     margin-bottom: 2%;
     border-bottom: 1px dashed black;
@@ -247,12 +252,6 @@ p {
     justify-content: space-around;
 }
 
-@media (min-width: 500px) {
-    .bottom-content {
-        flex-direction: column;
-    }
-}
-
 .bottom-content .text-container {
     padding-right: 4%;
 }
@@ -264,6 +263,12 @@ p {
 @media (min-width: 800px) {
     .bottom-content {
         flex-direction: row;
+    }
+}
+
+@media (min-width: 500px) {
+    .bottom-content {
+        flex-direction: column;
     }
 }
 
